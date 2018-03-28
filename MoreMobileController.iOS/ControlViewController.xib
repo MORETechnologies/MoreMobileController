@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ControlViewController">
+            <connections>
+                <outlet property="backButton" destination="wbU-8I-1ZS" id="name-outlet-wbU-8I-1ZS"/>
+                <outlet property="backwardButton" destination="ipl-IP-vHm" id="name-outlet-ipl-IP-vHm"/>
+                <outlet property="forwardButton" destination="BQd-Ld-JoI" id="name-outlet-BQd-Ld-JoI"/>
+                <outlet property="leftButton" destination="Yy8-wl-oH4" id="name-outlet-Yy8-wl-oH4"/>
+                <outlet property="modeButton" destination="rJV-ed-fML" id="name-outlet-rJV-ed-fML"/>
+                <outlet property="rightButton" destination="D2C-bq-EN2" id="name-outlet-D2C-bq-EN2"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="2">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbU-8I-1ZS">
+                    <rect key="frame" x="8" y="28" width="37.5" height="37.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="wbU-8I-1ZS" secondAttribute="height" multiplier="1:1" id="4ch-6Z-iIj"/>
+                    </constraints>
+                    <state key="normal" image="arrowLeft.png"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MORE Controller" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.050000000000000003" translatesAutoresizingMaskIntoConstraints="NO" id="T6f-vf-lqm">
+                    <rect key="frame" x="56.5" y="-10" width="262.5" height="112.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="94"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpj-Se-aZv">
+                    <rect key="frame" x="0.0" y="292" width="375" height="375"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQd-Ld-JoI">
+                            <rect key="frame" x="125.5" y="-0.5" width="125" height="125.5"/>
+                            <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                            <state key="normal" image="arrowUp.png"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yy8-wl-oH4">
+                            <rect key="frame" x="-0.5" y="125.5" width="125.5" height="125"/>
+                            <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                            <state key="normal" image="arrowLeft.png"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJV-ed-fML">
+                            <rect key="frame" x="125" y="125" width="125" height="125"/>
+                            <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <state key="normal" title="Remote">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <variation key="heightClass=regular-widthClass=regular">
+                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                            </variation>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2C-bq-EN2">
+                            <rect key="frame" x="250" y="125.5" width="125" height="125"/>
+                            <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                            <state key="normal" title="Button" image="arrowRight.png"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipl-IP-vHm">
+                            <rect key="frame" x="125.5" y="250" width="125" height="125"/>
+                            <color key="backgroundColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="contentEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                            <state key="normal" title="Button" image="arrowDown.png"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="D2C-bq-EN2" firstAttribute="height" secondItem="rJV-ed-fML" secondAttribute="height" id="0r4-xb-42R"/>
+                        <constraint firstItem="ipl-IP-vHm" firstAttribute="height" secondItem="rJV-ed-fML" secondAttribute="height" id="0sK-2L-bae"/>
+                        <constraint firstItem="Yy8-wl-oH4" firstAttribute="width" secondItem="rJV-ed-fML" secondAttribute="width" id="6ok-VF-x5c"/>
+                        <constraint firstItem="D2C-bq-EN2" firstAttribute="width" secondItem="rJV-ed-fML" secondAttribute="width" id="9qE-cv-gfz"/>
+                        <constraint firstItem="BQd-Ld-JoI" firstAttribute="height" secondItem="rJV-ed-fML" secondAttribute="height" id="Bay-8G-71h"/>
+                        <constraint firstItem="rJV-ed-fML" firstAttribute="top" secondItem="BQd-Ld-JoI" secondAttribute="bottom" id="CS2-hW-9Qg"/>
+                        <constraint firstItem="Yy8-wl-oH4" firstAttribute="height" secondItem="rJV-ed-fML" secondAttribute="height" id="Hpc-3W-BPA"/>
+                        <constraint firstItem="D2C-bq-EN2" firstAttribute="leading" secondItem="rJV-ed-fML" secondAttribute="trailing" id="Kuv-DI-XcM"/>
+                        <constraint firstItem="ipl-IP-vHm" firstAttribute="width" secondItem="rJV-ed-fML" secondAttribute="width" id="MYY-A8-beO"/>
+                        <constraint firstItem="rJV-ed-fML" firstAttribute="centerX" secondItem="rpj-Se-aZv" secondAttribute="centerX" id="Per-Yc-Y2b"/>
+                        <constraint firstItem="rJV-ed-fML" firstAttribute="height" secondItem="rpj-Se-aZv" secondAttribute="height" multiplier="1 / 3" id="Pqn-oL-PJz"/>
+                        <constraint firstItem="Yy8-wl-oH4" firstAttribute="centerY" secondItem="rJV-ed-fML" secondAttribute="centerY" id="R1W-kZ-w9f"/>
+                        <constraint firstAttribute="width" secondItem="rpj-Se-aZv" secondAttribute="height" multiplier="1:1" id="TCZ-5H-SpJ"/>
+                        <constraint firstItem="D2C-bq-EN2" firstAttribute="centerY" secondItem="rJV-ed-fML" secondAttribute="centerY" id="aCp-mO-YCm"/>
+                        <constraint firstItem="rJV-ed-fML" firstAttribute="width" secondItem="rpj-Se-aZv" secondAttribute="width" multiplier="1 / 3" id="iiC-13-Rjo"/>
+                        <constraint firstItem="rJV-ed-fML" firstAttribute="centerY" secondItem="rpj-Se-aZv" secondAttribute="centerY" id="lEc-lQ-HAU"/>
+                        <constraint firstItem="ipl-IP-vHm" firstAttribute="top" secondItem="rJV-ed-fML" secondAttribute="bottom" id="mNn-OQ-vjb"/>
+                        <constraint firstItem="BQd-Ld-JoI" firstAttribute="width" secondItem="rJV-ed-fML" secondAttribute="width" id="vG6-Py-we5"/>
+                        <constraint firstItem="BQd-Ld-JoI" firstAttribute="centerX" secondItem="rJV-ed-fML" secondAttribute="centerX" id="xOJ-vK-TKs"/>
+                        <constraint firstItem="rJV-ed-fML" firstAttribute="leading" secondItem="Yy8-wl-oH4" secondAttribute="trailing" id="ysd-Xg-Mjl"/>
+                        <constraint firstItem="ipl-IP-vHm" firstAttribute="centerX" secondItem="rJV-ed-fML" secondAttribute="centerX" id="yvg-1Y-NNe"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="T6f-vf-lqm" firstAttribute="width" secondItem="rpj-Se-aZv" secondAttribute="width" multiplier="0.7" id="0Bt-CX-zTM"/>
+                <constraint firstItem="T6f-vf-lqm" firstAttribute="centerY" secondItem="wbU-8I-1ZS" secondAttribute="centerY" id="1CH-Ii-haq"/>
+                <constraint firstItem="rpj-Se-aZv" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="4cN-lb-n6o"/>
+                <constraint firstItem="rpj-Se-aZv" firstAttribute="bottom" secondItem="l6O-xk-6N6" secondAttribute="bottom" id="Dcd-L4-XDR"/>
+                <constraint firstItem="wbU-8I-1ZS" firstAttribute="width" secondItem="2" secondAttribute="width" multiplier="0.1" id="S8B-rx-xaT"/>
+                <constraint firstAttribute="trailing" secondItem="rpj-Se-aZv" secondAttribute="trailing" id="nk6-GK-l6G"/>
+                <constraint firstItem="T6f-vf-lqm" firstAttribute="centerX" secondItem="l6O-xk-6N6" secondAttribute="centerX" id="qzr-kZ-cid"/>
+                <constraint firstItem="wbU-8I-1ZS" firstAttribute="top" secondItem="l6O-xk-6N6" secondAttribute="top" constant="8" id="ruz-u3-BcM"/>
+                <constraint firstItem="wbU-8I-1ZS" firstAttribute="leading" secondItem="l6O-xk-6N6" secondAttribute="leading" constant="8" id="sZd-kf-Lbh"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="l6O-xk-6N6"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrowDown.png" width="256" height="256"/>
+        <image name="arrowLeft.png" width="256" height="256"/>
+        <image name="arrowRight.png" width="256" height="256"/>
+        <image name="arrowUp.png" width="256" height="256"/>
+    </resources>
+</document>
