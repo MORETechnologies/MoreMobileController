@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using System.Text;
-
+﻿using System.Text;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace MoreMobileController.Core
 {
@@ -19,7 +19,7 @@ namespace MoreMobileController.Core
 
         public byte[] Serialize()
         {
-            string json = JsonConvert.SerializeObject(this);
+            string json = JsonConvert.SerializeObject(this, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
 
             return Encoding.UTF8.GetBytes(json);
         }
