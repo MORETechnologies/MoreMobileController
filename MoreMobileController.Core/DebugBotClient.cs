@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace MoreMobileController.Core
 {
@@ -23,7 +23,8 @@ namespace MoreMobileController.Core
 
         public async Task SendMessage(BotMessage message)
         {
-            Debug.WriteLine(JsonConvert.SerializeObject(message));
+            byte[] data = message.Serialize();
+            Debug.WriteLine(Encoding.UTF8.GetString(data));
             await Task.Delay(100);
         }
     }
