@@ -29,6 +29,9 @@ namespace MoreMobileController.iOS
 
             connectButton.TouchUpInside += async (sender, e) => {
                 connectButton.Enabled = false;
+                viewModel.HostName = hostField.Text;
+                int.TryParse(portField.Text, out int port);
+                viewModel.PortNumber = port;
                 if (await viewModel.ConnectAsync()) {
                     NavigationController.PushViewController(new ControlViewController(viewModel.ControlViewModel), true);
                 }
