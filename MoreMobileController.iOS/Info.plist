@@ -3,12 +3,10 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>More Controller</string>
+	<string>MORE Controller</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.tnhlabs.More-Controller</string>
+	<string>co.moretech.MORE-Controller</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
-	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -29,10 +27,12 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 </dict>
 </plist>
