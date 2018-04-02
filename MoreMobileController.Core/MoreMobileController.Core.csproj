@@ -9,5 +9,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="EmptyInterface.cs" />
+    <Compile Remove="Models\EmptyClass.cs" />
   </ItemGroup>
 </Project>
