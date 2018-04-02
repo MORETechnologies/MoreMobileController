@@ -11,6 +11,7 @@ namespace MoreMobileController.Core
         internal ControlViewModel(IBotClient client)
         {
             this.client = client;
+            currentMode = BotMode.Yoyo;
         }
 
         public event EventHandler<string> ModeTextChanged;
