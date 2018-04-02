@@ -12,7 +12,7 @@ namespace MoreMobileController.Core
 
         public ConnectViewModel()
         {
-            client = new DebugBotClient();
+            client = new BotClient();
             HostName = DefaultHost;
             PortNumber = DefaultPort;
         }
@@ -29,7 +29,11 @@ namespace MoreMobileController.Core
         {
             StatusChanged?.Invoke(this, "Connecting...");
 
-            if (await client.ConnectAsync(HostName, PortNumber)) {
+            if (HostName == "test") {
+                ControlViewModel = new ControlViewModel(new DebugBotClient());
+                StatusChanged?.Invoke(this, "");
+                return true;
+            } else if (await client.ConnectAsync(HostName, PortNumber)) {
                 ControlViewModel = new ControlViewModel(client);
                 StatusChanged?.Invoke(this, "");
                 return true;
