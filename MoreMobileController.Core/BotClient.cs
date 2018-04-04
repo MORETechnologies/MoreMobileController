@@ -19,17 +19,21 @@ namespace MoreMobileController.Core
 
         public async Task<bool> ConnectAsync(string host, int portNumber)
         {
-            client = CreatTcpClient();
+            try {
+                client = CreatTcpClient();
 
-            var connectTask = client.ConnectAsync(host, portNumber);
-            await Task.WhenAny(connectTask, Task.Delay(Timeout));
+                var connectTask = client.ConnectAsync(host, portNumber);
+                await Task.WhenAny(connectTask, Task.Delay(Timeout));
 
-            if (client.Connected) {
-                networkStream = client.GetStream();
-                return true;
+                if (client.Connected) {
+                    networkStream = client.GetStream();
+                    return true;
+                }
+
+                client.Close();
+            } catch (Exception) {
+
             }
-
-            client.Close();
 
             return false;
         }
