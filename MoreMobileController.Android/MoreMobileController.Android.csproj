@@ -74,9 +74,11 @@
     <AndroidResource Include="Resources\drawable\arrowRight.png" />
     <AndroidResource Include="Resources\drawable\arrowUp.png" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\animator\control_button.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\animator\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MoreMobileController.Core\MoreMobileController.Core.csproj">

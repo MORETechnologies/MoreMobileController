@@ -16,7 +16,8 @@
             android:layout_centerHorizontal="true"
             android:scaleType="fitCenter"
             android:padding="8dp"
-            style="@style/BlueButton" />
+            style="@style/blue_button"
+            android:stateListAnimator="@animator/control_button" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,8 +27,8 @@
             android:layout_centerHorizontal="true"
             android:textSize="40dp"
             android:padding="8dp"
-            style="@style/BlueButton"
-            android:stateListAnimator="@null" />
+            style="@style/blue_button"
+            android:stateListAnimator="@animator/control_button" />
         <ImageButton
             android:src="@drawable/arrowleft"
             android:layout_width="wrap_content"
@@ -35,28 +36,31 @@
             android:layout_toLeftOf="@id/modeButton"
             android:id="@+id/leftButton"
             android:layout_above="@id/backwardButton"
-            style="@style/BlueButton"
+            style="@style/blue_button"
             android:scaleType="fitCenter"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:stateListAnimator="@animator/control_button" />
         <ImageButton
             android:src="@drawable/arrowright"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/modeButton"
             android:id="@+id/rightButton"
-            style="@style/BlueButton"
+            style="@style/blue_button"
             android:layout_above="@id/backwardButton"
             android:scaleType="fitCenter"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:stateListAnimator="@animator/control_button" />
         <ImageButton
             android:src="@drawable/arrowup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/forwardButton"
-            style="@style/BlueButton"
+            style="@style/blue_button"
             android:scaleType="fitCenter"
             android:padding="8dp"
             android:layout_above="@id/modeButton"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:stateListAnimator="@animator/control_button" />
     </RelativeLayout>
 </LinearLayout>
