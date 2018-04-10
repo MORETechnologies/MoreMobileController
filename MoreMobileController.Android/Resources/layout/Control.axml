@@ -3,92 +3,63 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:textAppearance="?android:attr/textAppearanceLarge"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1"
-        android:gravity="center"
-        android:text="MORE Controller" />
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1"
-        android:minWidth="25px"
-        android:minHeight="25px">
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relativeLayout1">
+        <ImageButton
+            android:src="@drawable/arrowdown"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayout2">
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:id="@+id/space1"
-                android:layout_weight="1" />
-            <ImageButton
-                android:src="@drawable/arrowup"
-                android:id="@+id/forwardButton"
-                android:scaleType="fitCenter"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:id="@+id/space2"
-                android:layout_weight="1" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+            android:id="@+id/backwardButton"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitCenter"
+            android:padding="8dp"
+            style="@style/BlueButton" />
+        <Button
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayout3">
-            <ImageButton
-                android:id="@+id/leftButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:src="@drawable/arrowleft"
-                android:scaleType="fitCenter" />
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/modeButton"
-                android:text="Yoyo"
-                android:layout_weight="1" />
-            <ImageButton
-                android:src="@drawable/arrowright"
-                android:id="@+id/rightButton"
-                android:scaleType="fitCenter"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+            android:layout_above="@id/backwardButton"
+            android:id="@+id/modeButton"
+            android:text="Yoyo"
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp"
+            android:padding="8dp"
+            style="@style/BlueButton"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="0"
+            android:requiresFadingEdge="none" />
+        <ImageButton
+            android:src="@drawable/arrowleft"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayout3">
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:id="@+id/space3"
-                android:layout_weight="1" />
-            <ImageButton
-                android:src="@drawable/arrowdown"
-                android:id="@+id/backwardButton"
-                android:scaleType="fitCenter"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:adjustViewBounds="true" />
-            <Space
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:id="@+id/space4"
-                android:layout_weight="1" />
-        </LinearLayout>
-    </LinearLayout>
+            android:layout_toLeftOf="@id/modeButton"
+            android:id="@+id/leftButton"
+            android:layout_above="@id/backwardButton"
+            style="@style/BlueButton"
+            android:scaleType="fitCenter"
+            android:padding="8dp" />
+        <ImageButton
+            android:src="@drawable/arrowright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/modeButton"
+            android:id="@+id/rightButton"
+            style="@style/BlueButton"
+            android:layout_above="@id/backwardButton"
+            android:scaleType="fitCenter"
+            android:padding="8dp" />
+        <ImageButton
+            android:src="@drawable/arrowup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/forwardButton"
+            style="@style/BlueButton"
+            android:scaleType="fitCenter"
+            android:padding="8dp"
+            android:layout_above="@id/modeButton"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
 </LinearLayout>

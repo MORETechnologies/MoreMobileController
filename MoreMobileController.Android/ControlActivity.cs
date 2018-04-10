@@ -26,6 +26,22 @@ namespace MoreMobileController.Android
             rightButton = FindViewById<ImageButton>(Resource.Id.rightButton);
             backwardButton = FindViewById<ImageButton>(Resource.Id.backwardButton);
             modeButton = FindViewById<Button>(Resource.Id.modeButton);
+
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            WindowManager.DefaultDisplay.GetMetrics(displayMetrics);
+            int size = displayMetrics.WidthPixels / 3;
+
+            MakeSquare(forwardButton, size);
+            MakeSquare(leftButton, size);
+            MakeSquare(rightButton, size);
+            MakeSquare(backwardButton, size);
+            MakeSquare(modeButton, size);
+        }
+
+        private void MakeSquare(View view, int size)
+        {
+            view.LayoutParameters.Width = size;
+            view.LayoutParameters.Height = size;
         }
     }
 }

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <style name="BlueButton">
+        <item name="android:background">#ff2196f3</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+</resources>
