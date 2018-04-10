@@ -25,7 +25,7 @@
             android:id="@+id/modeButton"
             android:text="Yoyo"
             android:layout_centerHorizontal="true"
-            android:textSize="40dp"
+            android:textSize="26dp"
             android:padding="8dp"
             style="@style/blue_button"
             android:stateListAnimator="@animator/control_button" />
