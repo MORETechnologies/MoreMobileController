@@ -27,10 +27,7 @@
             android:textSize="40dp"
             android:padding="8dp"
             style="@style/BlueButton"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="0"
-            android:requiresFadingEdge="none" />
+            android:stateListAnimator="@null" />
         <ImageButton
             android:src="@drawable/arrowleft"
             android:layout_width="wrap_content"
