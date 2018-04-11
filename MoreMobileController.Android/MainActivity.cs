@@ -1,12 +1,11 @@
 ﻿using Android.App;
+using Android.Content.PM;
 using Android.OS;
 using Android.Widget;
-using MoreMobileController.Core;
-using System;
 
 namespace MoreMobileController.Android
 {
-    [Activity(Label = "MORE Controller", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(Label = "MORE Controller", MainLauncher = true, Icon = "@mipmap/icon", ScreenOrientation = ScreenOrientation.SensorPortrait)]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

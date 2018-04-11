@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content.PM;
 using Android.OS;
 using Android.Util;
 using Android.Views;
@@ -7,7 +8,7 @@ using MoreMobileController.Core;
 
 namespace MoreMobileController.Android
 {
-    [Activity(Label = "ControlActivity")]
+    [Activity(Label = "ControlActivity", ScreenOrientation = ScreenOrientation.SensorPortrait)]
     public class ControlActivity : Activity
     {
         ImageButton forwardButton;
