@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -13,9 +14,13 @@ namespace MoreMobileController.Core
             return JsonConvert.DeserializeObject<BotMessage>(json);
         }
 
+        public int Id { get; set; }
+
         public string Command { get; set; }
 
         public string Data { get; set; }
+
+        public IEnumerable<int> Pins { get; set; }
 
         public byte[] Serialize()
         {
