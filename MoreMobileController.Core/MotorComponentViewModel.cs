@@ -17,6 +17,8 @@
             this.client = client;
             id = motorCount;
             motorCount++;
+
+            Speed = 100;
         }
 
         public int SpeedPin { get; set; }
@@ -24,6 +26,8 @@
         public int DirectionPin1 { get; set; }
 
         public int DirectionPin2 { get; set; }
+
+        public int Speed { get; set; }
 
         public void AddMotor()
         {
@@ -49,6 +53,7 @@
             BotMessage message = new BotMessage();
             message.Id = id;
             message.Command = ClockwiseCommand;
+            message.Data = Speed.ToString();
 
             client.SendMessage(message);
         }
@@ -58,6 +63,7 @@
             BotMessage message = new BotMessage();
             message.Id = id;
             message.Command = CounterclockwiseCommand;
+            message.Data = Speed.ToString();
 
             client.SendMessage(message);
         }

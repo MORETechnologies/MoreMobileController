@@ -58,11 +58,15 @@ namespace MoreMobileController.iOS
 
             clockwiseButton.TouchUpInside += (sender, e) => {
                 Superview.EndEditing(true);
+
+                viewModel.Speed = (int)speedSlider.Value;
                 viewModel.RotateClockwise();
             };
 
             counterclockwiseButton.TouchUpInside += (sender, e) => {
                 Superview.EndEditing(true);
+
+                viewModel.Speed = (int)speedSlider.Value;
                 viewModel.RotateCounterclockwise();
             };
 
@@ -81,6 +85,10 @@ namespace MoreMobileController.iOS
 
                     viewModel.AddMotor();
                 }
+            };
+
+            speedSlider.ValueChanged += (sender, e) => {
+                speedLabel.Text = "Speed: " + (int)speedSlider.Value;
             };
         }
     }
