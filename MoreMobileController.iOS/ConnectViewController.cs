@@ -34,7 +34,7 @@ namespace MoreMobileController.iOS
                 viewModel.PortNumber = port;
                 if (await viewModel.ConnectAsync()) {
                     //NavigationController.PushViewController(new ControlViewController(viewModel.ControlViewModel), true);
-                    NavigationController.PushViewController(new ComponentListViewController(), true);
+                    NavigationController.PushViewController(new ComponentListViewController(viewModel.ComponentListViewModel), true);
                 }
                 connectButton.Enabled = true;
             };
