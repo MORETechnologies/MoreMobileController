@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1" customClass="MotorComponentView">
+            <rect key="frame" x="0.0" y="0.0" width="456" height="317"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Motor" placeholder="Motor Name" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="B1n-OI-rEK">
+                    <rect key="frame" x="8" y="8" width="440" height="29"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed Pin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGj-aO-SYq">
+                    <rect key="frame" x="8" y="53" width="77.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6" borderStyle="roundedRect" placeholder="#" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Md-Gr-DbH">
+                    <rect key="frame" x="416" y="48.5" width="32" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direction Pin 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C3A-Qw-Mtv">
+                    <rect key="frame" x="8" y="89.5" width="109.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="7" borderStyle="roundedRect" placeholder="#" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E4g-xw-s4K">
+                    <rect key="frame" x="416.5" y="85" width="31.5" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direction Pin 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Hj-dl-eSM">
+                    <rect key="frame" x="8" y="126" width="111.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="8" borderStyle="roundedRect" placeholder="#" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbh-qn-5Ty">
+                    <rect key="frame" x="416" y="121.5" width="32" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed: 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Or3-cB-gy5">
+                    <rect key="frame" x="8" y="162.5" width="86.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="RP3-m5-BME">
+                    <rect key="frame" x="218" y="158" width="232" height="31"/>
+                </slider>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Koj-dK-5Ip">
+                    <rect key="frame" x="8" y="199" width="440" height="110"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcK-nF-bJN">
+                            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Delete">
+                                <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mp0-Wj-IG4">
+                            <rect key="frame" x="110" y="0.0" width="110" height="110"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Clockwise"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyC-cu-xgs">
+                            <rect key="frame" x="220" y="0.0" width="110" height="110"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Counter"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEA-eW-8ZT">
+                            <rect key="frame" x="330" y="0.0" width="110" height="110"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Update Pins"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="B1n-OI-rEK" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="8" id="67P-dY-1Ou"/>
+                <constraint firstItem="C3A-Qw-Mtv" firstAttribute="top" secondItem="jGj-aO-SYq" secondAttribute="bottom" constant="16" id="AcP-YM-axY"/>
+                <constraint firstAttribute="bottom" secondItem="Koj-dK-5Ip" secondAttribute="bottom" constant="8" id="Cfm-Ik-Eap"/>
+                <constraint firstItem="Or3-cB-gy5" firstAttribute="leading" secondItem="4Hj-dl-eSM" secondAttribute="leading" id="FCa-Ct-qLz"/>
+                <constraint firstAttribute="trailing" secondItem="B1n-OI-rEK" secondAttribute="trailing" constant="8" id="GBB-w5-s8O"/>
+                <constraint firstItem="4Hj-dl-eSM" firstAttribute="leading" secondItem="C3A-Qw-Mtv" secondAttribute="leading" id="Hq5-yp-eLf"/>
+                <constraint firstItem="E4g-xw-s4K" firstAttribute="baseline" secondItem="C3A-Qw-Mtv" secondAttribute="baseline" id="QDu-Zg-vBt"/>
+                <constraint firstItem="dbh-qn-5Ty" firstAttribute="baseline" secondItem="4Hj-dl-eSM" secondAttribute="baseline" id="RO4-vF-lic"/>
+                <constraint firstItem="9Md-Gr-DbH" firstAttribute="trailing" secondItem="B1n-OI-rEK" secondAttribute="trailing" id="RhQ-ar-MDa"/>
+                <constraint firstItem="Or3-cB-gy5" firstAttribute="top" secondItem="4Hj-dl-eSM" secondAttribute="bottom" constant="16" id="VKu-uM-yOU"/>
+                <constraint firstItem="4Hj-dl-eSM" firstAttribute="top" secondItem="C3A-Qw-Mtv" secondAttribute="bottom" constant="16" id="Whs-rh-Ktd"/>
+                <constraint firstItem="RP3-m5-BME" firstAttribute="width" secondItem="1" secondAttribute="width" multiplier="0.5" id="cQ7-9D-Wpb"/>
+                <constraint firstItem="jGj-aO-SYq" firstAttribute="leading" secondItem="B1n-OI-rEK" secondAttribute="leading" id="eYt-Gz-1hq"/>
+                <constraint firstItem="RP3-m5-BME" firstAttribute="trailing" secondItem="dbh-qn-5Ty" secondAttribute="trailing" id="f33-p5-mC5"/>
+                <constraint firstItem="Koj-dK-5Ip" firstAttribute="leading" secondItem="Or3-cB-gy5" secondAttribute="leading" id="fJf-hU-C2w"/>
+                <constraint firstItem="jGj-aO-SYq" firstAttribute="top" secondItem="B1n-OI-rEK" secondAttribute="bottom" constant="16" id="iDw-HI-6YP"/>
+                <constraint firstItem="9Md-Gr-DbH" firstAttribute="baseline" secondItem="jGj-aO-SYq" secondAttribute="baseline" id="jFW-Du-DA4"/>
+                <constraint firstItem="B1n-OI-rEK" firstAttribute="top" secondItem="1" secondAttribute="top" constant="8" id="kVS-ww-pn0"/>
+                <constraint firstItem="E4g-xw-s4K" firstAttribute="trailing" secondItem="9Md-Gr-DbH" secondAttribute="trailing" id="klo-v3-Fiu"/>
+                <constraint firstItem="dbh-qn-5Ty" firstAttribute="trailing" secondItem="E4g-xw-s4K" secondAttribute="trailing" id="lvS-Tq-ttQ"/>
+                <constraint firstItem="C3A-Qw-Mtv" firstAttribute="leading" secondItem="jGj-aO-SYq" secondAttribute="leading" id="oWE-rE-8iX"/>
+                <constraint firstItem="RP3-m5-BME" firstAttribute="centerY" secondItem="Or3-cB-gy5" secondAttribute="centerY" id="rtw-9X-JlJ"/>
+                <constraint firstItem="Koj-dK-5Ip" firstAttribute="top" secondItem="Or3-cB-gy5" secondAttribute="bottom" constant="16" id="s1o-B8-RD0"/>
+                <constraint firstItem="Koj-dK-5Ip" firstAttribute="trailing" secondItem="RP3-m5-BME" secondAttribute="trailing" id="t7l-VE-vlT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="clockwiseButton" destination="mp0-Wj-IG4" id="name-outlet-mp0-Wj-IG4"/>
+                <outlet property="counterclockwiseButton" destination="eyC-cu-xgs" id="name-outlet-eyC-cu-xgs"/>
+                <outlet property="deleteButton" destination="DcK-nF-bJN" id="name-outlet-DcK-nF-bJN"/>
+                <outlet property="directionPin1TextField" destination="E4g-xw-s4K" id="name-outlet-E4g-xw-s4K"/>
+                <outlet property="directionPin2TextField" destination="dbh-qn-5Ty" id="name-outlet-dbh-qn-5Ty"/>
+                <outlet property="speedLabel" destination="Or3-cB-gy5" id="name-outlet-Or3-cB-gy5"/>
+                <outlet property="speedPinTextField" destination="9Md-Gr-DbH" id="name-outlet-9Md-Gr-DbH"/>
+                <outlet property="speedSlider" destination="RP3-m5-BME" id="name-outlet-RP3-m5-BME"/>
+                <outlet property="updateButton" destination="XEA-eW-8ZT" id="name-outlet-XEA-eW-8ZT"/>
+            </connections>
+            <point key="canvasLocation" x="76" y="78.5"/>
+        </view>
+    </objects>
+</document>

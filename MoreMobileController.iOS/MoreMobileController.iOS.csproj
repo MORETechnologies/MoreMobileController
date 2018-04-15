@@ -113,6 +113,8 @@
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="ConnectViewController.xib" />
     <InterfaceDefinition Include="ControlViewController.xib" />
+    <InterfaceDefinition Include="ComponentListViewController.xib" />
+    <InterfaceDefinition Include="MotorComponentView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -129,6 +131,14 @@
     <Compile Include="ControlViewController.cs" />
     <Compile Include="ControlViewController.designer.cs">
       <DependentUpon>ControlViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentListViewController.cs" />
+    <Compile Include="ComponentListViewController.designer.cs">
+      <DependentUpon>ComponentListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MotorComponentView.cs" />
+    <Compile Include="MotorComponentView.designer.cs">
+      <DependentUpon>MotorComponentView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -33,7 +33,8 @@ namespace MoreMobileController.iOS
                 int.TryParse(portField.Text, out int port);
                 viewModel.PortNumber = port;
                 if (await viewModel.ConnectAsync()) {
-                    NavigationController.PushViewController(new ControlViewController(viewModel.ControlViewModel), true);
+                    //NavigationController.PushViewController(new ControlViewController(viewModel.ControlViewModel), true);
+                    NavigationController.PushViewController(new ComponentListViewController(), true);
                 }
                 connectButton.Enabled = true;
             };
