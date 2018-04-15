@@ -29,16 +29,22 @@ namespace MoreMobileController.Core
 
         public ControlViewModel ControlViewModel { get; private set; }
 
+        public ComponentListViewModel ComponentListViewModel { get; private set; }
+
         public async Task<bool> ConnectAsync()
         {
             StatusChanged?.Invoke(this, "Connecting...");
 
             if (HostName == "test") {
                 ControlViewModel = new ControlViewModel(new DebugBotClient());
+                ComponentListViewModel = new ComponentListViewModel(new DebugBotClient());
                 StatusChanged?.Invoke(this, "");
                 return true;
-            } else if (await client.ConnectAsync(HostName, PortNumber)) {
+            }
+
+            if (await client.ConnectAsync(HostName, PortNumber)) {
                 ControlViewModel = new ControlViewModel(client);
+                ComponentListViewModel = new ComponentListViewModel(client);
                 StatusChanged?.Invoke(this, "");
                 return true;
             }
