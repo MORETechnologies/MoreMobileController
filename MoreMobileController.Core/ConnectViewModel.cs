@@ -5,7 +5,11 @@ namespace MoreMobileController.Core
 {
     public class ConnectViewModel
     {
+#if DEBUG
+        const string DefaultHost = "test";
+#else
         const string DefaultHost = "192.168.4.1";
+#endif
         const int DefaultPort = 333;
 
         IBotClient client;
