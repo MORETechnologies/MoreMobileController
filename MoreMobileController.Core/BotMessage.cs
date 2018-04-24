@@ -1,32 +1,22 @@
-﻿using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 namespace MoreMobileController.Core
 {
     public class BotMessage
     {
-        public static BotMessage Deserialize(byte[] data)
+        public static BotMessage Deserialize(string json)
         {
-            string json = Encoding.UTF8.GetString(data);
-
             return JsonConvert.DeserializeObject<BotMessage>(json);
         }
-
-        public int Id { get; set; }
 
         public string Command { get; set; }
 
         public string Data { get; set; }
 
-        public IEnumerable<int> Pins { get; set; }
-
-        public byte[] Serialize()
+        public virtual string Serialize()
         {
-            string json = JsonConvert.SerializeObject(this, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
-
-            return Encoding.UTF8.GetBytes(json);
+            return JsonConvert.SerializeObject(this, new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
         }
     }
 }

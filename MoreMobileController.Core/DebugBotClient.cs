@@ -23,8 +23,7 @@ namespace MoreMobileController.Core
 
         public async Task SendMessage(BotMessage message)
         {
-            byte[] data = message.Serialize();
-            Debug.WriteLine(Encoding.UTF8.GetString(data));
+            Debug.WriteLine(message.Serialize());
             await Task.Delay(100);
         }
     }

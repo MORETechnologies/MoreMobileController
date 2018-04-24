@@ -2,10 +2,11 @@
 {
     public class MotorComponentViewModel
     {
-        const string AddCommand = "motor-add";
-        const string ClockwiseCommand = "motor-clockwise";
-        const string CounterclockwiseCommand = "motor-counter";
-        const string RemoveCommand = "motor-remove";
+        const string ComponentType = "motor";
+        const string AddCommand = "add";
+        const string ClockwiseCommand = "clockwise";
+        const string CounterclockwiseCommand = "counter";
+        const string RemoveCommand = "remove";
 
         private static int motorCount;
 
@@ -31,41 +32,52 @@
 
         public void AddMotor()
         {
-            BotMessage message = new BotMessage();
+            MotorMessage message = new MotorMessage();
             message.Id = id;
             message.Command = AddCommand;
-            message.Pins = new[] { SpeedPin, DirectionPin1, DirectionPin2 };
+            message.SpeedPin = SpeedPin;
+            message.DirectionPin1 = DirectionPin1;
+            message.DirectionPin2 = DirectionPin2;
 
-            client.SendMessage(message);
+            client.SendMessage(WrapMotorMessage(message));
         }
 
         public void RemoveMotor()
         {
-            BotMessage message = new BotMessage();
+            MotorMessage message = new MotorMessage();
             message.Id = id;
             message.Command = RemoveCommand;
 
-            client.SendMessage(message);
+            client.SendMessage(WrapMotorMessage(message));
         }
 
         public void RotateClockwise()
         {
-            BotMessage message = new BotMessage();
+            MotorMessage message = new MotorMessage();
             message.Id = id;
             message.Command = ClockwiseCommand;
             message.Data = Speed.ToString();
 
-            client.SendMessage(message);
+            client.SendMessage(WrapMotorMessage(message));
         }
 
         public void RotateCounterclockwise()
         {
-            BotMessage message = new BotMessage();
+            MotorMessage message = new MotorMessage();
             message.Id = id;
             message.Command = CounterclockwiseCommand;
             message.Data = Speed.ToString();
 
-            client.SendMessage(message);
+            client.SendMessage(WrapMotorMessage(message));
+        }
+
+        private static BotMessage WrapMotorMessage(MotorMessage message)
+        {
+            BotMessage wrapper = new BotMessage();
+            wrapper.Command = ComponentType;
+            wrapper.Data = message.Serialize();
+
+            return wrapper;
         }
     }
 }

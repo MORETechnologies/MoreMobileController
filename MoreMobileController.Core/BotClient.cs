@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Sockets;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace MoreMobileController.Core
@@ -41,7 +42,7 @@ namespace MoreMobileController.Core
         public async Task SendMessage(BotMessage message)
         {
             if (client.Connected) {
-                byte[] buffer = message.Serialize();
+                byte[] buffer = Encoding.UTF8.GetBytes(message.Serialize());
 
                 await networkStream.WriteAsync(buffer, 0, buffer.Length);
             } else {
