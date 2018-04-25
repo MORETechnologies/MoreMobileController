@@ -59,14 +59,14 @@ namespace MoreMobileController.iOS
             clockwiseButton.TouchUpInside += (sender, e) => {
                 Superview.EndEditing(true);
 
-                viewModel.Speed = (int)speedSlider.Value;
+                viewModel.Speed = (byte)speedSlider.Value;
                 viewModel.RotateClockwise();
             };
 
             counterclockwiseButton.TouchUpInside += (sender, e) => {
                 Superview.EndEditing(true);
 
-                viewModel.Speed = (int)speedSlider.Value;
+                viewModel.Speed = (byte)speedSlider.Value;
                 viewModel.RotateCounterclockwise();
             };
 
@@ -75,9 +75,9 @@ namespace MoreMobileController.iOS
                 if (!string.IsNullOrEmpty(speedPinTextField.Text) && !string.IsNullOrEmpty(directionPin1TextField.Text) && !string.IsNullOrEmpty(directionPin2TextField.Text)) {
                     viewModel.RemoveMotor();
 
-                    int.TryParse(speedPinTextField.Text, out int speedPin);
-                    int.TryParse(directionPin1TextField.Text, out int directionPin1);
-                    int.TryParse(directionPin2TextField.Text, out int directionPin2);
+                    byte.TryParse(speedPinTextField.Text, out byte speedPin);
+                    byte.TryParse(directionPin1TextField.Text, out byte directionPin1);
+                    byte.TryParse(directionPin2TextField.Text, out byte directionPin2);
 
                     viewModel.SpeedPin = speedPin;
                     viewModel.DirectionPin1 = directionPin1;

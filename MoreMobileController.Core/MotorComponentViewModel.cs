@@ -1,83 +1,104 @@
-﻿namespace MoreMobileController.Core
+﻿using System.Threading.Tasks;
+
+namespace MoreMobileController.Core
 {
     public class MotorComponentViewModel
     {
-        const string ComponentType = "motor";
-        const string AddCommand = "add";
-        const string ClockwiseCommand = "clockwise";
-        const string CounterclockwiseCommand = "counter";
-        const string RemoveCommand = "remove";
-
-        private static int motorCount;
-
-        int id;
         IBotClient client;
 
         internal MotorComponentViewModel(IBotClient client)
         {
             this.client = client;
-            id = motorCount;
-            motorCount++;
 
             Speed = 100;
         }
 
-        public int SpeedPin { get; set; }
+        public byte SpeedPin { get; set; }
 
-        public int DirectionPin1 { get; set; }
+        public byte DirectionPin1 { get; set; }
 
-        public int DirectionPin2 { get; set; }
+        public byte DirectionPin2 { get; set; }
 
-        public int Speed { get; set; }
+        public byte Speed { get; set; }
 
-        public void AddMotor()
+        public async Task AddMotor()
         {
-            MotorMessage message = new MotorMessage();
-            message.Id = id;
-            message.Command = AddCommand;
-            message.SpeedPin = SpeedPin;
-            message.DirectionPin1 = DirectionPin1;
-            message.DirectionPin2 = DirectionPin2;
+            PinMessage message = new PinMessage();
+            message.Command = PinMessage.OutputMode;
+            message.PinNumber = SpeedPin;
 
-            client.SendMessage(WrapMotorMessage(message));
+            await client.SendMessage(WrapPinMessage(message));
+
+            message.PinNumber = DirectionPin1;
+
+            await client.SendMessage(WrapPinMessage(message));
+
+            message.PinNumber = DirectionPin2;
+
+            await client.SendMessage(WrapPinMessage(message));
         }
 
-        public void RemoveMotor()
+        public async Task RemoveMotor()
         {
-            MotorMessage message = new MotorMessage();
-            message.Id = id;
-            message.Command = RemoveCommand;
+            PinMessage message = new PinMessage();
+            message.Command = PinMessage.AnalogWrite;
+            message.Data = "0";
 
-            client.SendMessage(WrapMotorMessage(message));
+            await client.SendMessage(WrapPinMessage(message));
         }
 
-        public void RotateClockwise()
+        public async Task RotateClockwise()
         {
-            MotorMessage message = new MotorMessage();
-            message.Id = id;
-            message.Command = ClockwiseCommand;
-            message.Data = Speed.ToString();
+            PinMessage message = new PinMessage();
+            message.Command = PinMessage.WriteHigh;
+            message.PinNumber = DirectionPin1;
 
-            client.SendMessage(WrapMotorMessage(message));
+            await client.SendMessage(WrapPinMessage(message));
+
+            message.Command = PinMessage.WriteLow;
+            message.PinNumber = DirectionPin2;
+
+            await client.SendMessage(WrapPinMessage(message));
+
+            message.Command = PinMessage.AnalogWrite;
+            message.PinNumber = SpeedPin;
+            message.Data = MapToRealValue(Speed).ToString();
+
+            await client.SendMessage(WrapPinMessage(message));
         }
 
-        public void RotateCounterclockwise()
+        public async Task RotateCounterclockwise()
         {
-            MotorMessage message = new MotorMessage();
-            message.Id = id;
-            message.Command = CounterclockwiseCommand;
-            message.Data = Speed.ToString();
+            PinMessage message = new PinMessage();
+            message.Command = PinMessage.WriteLow;
+            message.PinNumber = DirectionPin1;
 
-            client.SendMessage(WrapMotorMessage(message));
+            await client.SendMessage(WrapPinMessage(message));
+
+            message.Command = PinMessage.WriteHigh;
+            message.PinNumber = DirectionPin2;
+
+            await client.SendMessage(WrapPinMessage(message));
+
+            message.Command = PinMessage.AnalogWrite;
+            message.PinNumber = SpeedPin;
+            message.Data = MapToRealValue(Speed).ToString();
+
+            await client.SendMessage(WrapPinMessage(message));
         }
 
-        private static BotMessage WrapMotorMessage(MotorMessage message)
+        private static BotMessage WrapPinMessage(PinMessage message)
         {
             BotMessage wrapper = new BotMessage();
-            wrapper.Command = ComponentType;
+            wrapper.Command = PinMessage.CommandName;
             wrapper.Data = message.Serialize();
 
             return wrapper;
+        }
+
+        private static byte MapToRealValue(byte value)
+        {
+            return (byte)(255 * value / 100);
         }
     }
 }
