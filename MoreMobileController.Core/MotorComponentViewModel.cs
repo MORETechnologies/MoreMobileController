@@ -42,6 +42,7 @@ namespace MoreMobileController.Core
         {
             PinMessage message = new PinMessage();
             message.Command = PinMessage.AnalogWrite;
+            message.PinNumber = SpeedPin;
             message.Data = "0";
 
             await client.SendMessage(WrapPinMessage(message));
