@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MoreMobileController.Core
@@ -11,9 +12,11 @@ namespace MoreMobileController.Core
 
         TcpClient client;
         NetworkStream networkStream;
+        SemaphoreSlim messageSemaphore;
 
         public BotClient()
         {
+            messageSemaphore = new SemaphoreSlim(1, 1);
         }
 
         public event EventHandler Disconnected;
@@ -42,9 +45,14 @@ namespace MoreMobileController.Core
         public async Task SendMessage(BotMessage message)
         {
             if (client.Connected) {
-                byte[] buffer = Encoding.UTF8.GetBytes(message.Serialize());
+                string json = message.Serialize();
+                byte[] buffer = Encoding.UTF8.GetBytes(json);
 
+                await messageSemaphore.WaitAsync();
                 await networkStream.WriteAsync(buffer, 0, buffer.Length);
+                await Task.Delay(buffer.Length * 2);
+
+                messageSemaphore.Release();
             } else {
                 Disconnected?.Invoke(this, EventArgs.Empty);
             }
